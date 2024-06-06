@@ -12,6 +12,7 @@ const config ={
 }
 
 const connection = await mysql.createConnection(config)
+await connection.query(`use userdb`)
 export class UserModel{
     static async logIn({input}){
         const [user] = await connection.query(
